@@ -4,7 +4,7 @@ function Alert(props) {
     return (
 
         props.alert &&<>
-           <div className="alert alert-success alert-dismissible fade show" role="alert">
+           <div className="alert alert-success alert-dismissible fade show" id='alertMS' role="alert">
                 <strong>{props.alert.msg}</strong> 
              
             </div>

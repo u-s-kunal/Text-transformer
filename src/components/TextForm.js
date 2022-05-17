@@ -33,11 +33,10 @@ export default function TextForm(props) {
     const extraSpace =()=> {
         let newText = text.split(/[ ]+/);
         setText(newText.join(' '));
-    
     }
     
 
-    const [text, setText] = useState(' ');
+    const [text, setText] = useState('');
     return (
         <>
             <div className="container my-4">
@@ -51,7 +50,6 @@ export default function TextForm(props) {
                         </div>
                     </div>
                 </div>
-
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -61,18 +59,15 @@ export default function TextForm(props) {
                             <button type="button" onClick={extraSpace} className="btn btn-outline-dark m-2  ">Remove Extra spaces</button>
                             <button type="button" onClick={clearText} className="btn btn-outline-dark m-2  col-6 col-lg-2 ">Clear</button>
                         </div>
-
-
                     </div>
-
                 </div>
-
-
             </div>
 
             <div className="container my-5">
                 <h2 className='text  my-3'> Text Summary</h2>
-                <p> {text === ''? text.split(' ').length-1:text.split(' ').length} Words and  {text.length} Characters.</p>
+                <p> {text.split(' ').filter((element) => {
+                    return element.length !==0
+                }).length} Words and  {text.length} Characters.</p>
                 <p> Will take average {0.48 * text.split(" ").length} Seconds to read.</p>
                 <h2>Preview</h2>
                 <p>{text.length>''? text:'Enter text to analyze...!!!'}</p>
