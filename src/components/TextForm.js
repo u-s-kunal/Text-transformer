@@ -65,7 +65,7 @@ export default function TextForm(props) {
 
             <div className="container my-5">
                 <h2 className='text  my-3'> Text Summary</h2>
-                <p> {text.split(' ').filter((element) => {
+                <p> {text.split(/\s+/).filter((element) => {
                     return element.length !==0
                 }).length} Words and  {text.length} Characters.</p>
                 <p> Will take average {0.48 * text.split(" ").length} Seconds to read.</p>
